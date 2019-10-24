@@ -1,4 +1,4 @@
-Welcome to the Zonimo wiki!
+Welcome to the Zonimo project! (check the "Animal Database" Repository for updates)
 
 # Overview
 Zonimo was a project which I started working on in late 2015 and I build it entirely.
@@ -18,4 +18,6 @@ It was built entirely from PHP and a little CSS, HTML, and JavaScript using Code
 ### Here is another screenshot of the selling page
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo3.PNG)
 
-
+## Now, the main page. This is main project of the platform
+### This is the screenshot for the main page for factopedia which held all the facts about animals
+![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo4.PNG)
