@@ -2,6 +2,7 @@ Welcome to the Zonimo project! (check the "Animal Database" Repository for updat
 
 # Overview
 Zonimo was a project which I started working on in late 2015 and I build it entirely.
+By the time I started working with the database, I had over 20,000 unique animal names.
 After I completed learning the fundamentals of HTML and CSS, I started building simple websites.
 Then, an idea was born from my love of animals and programming. I wanted to create a platform that was all about them (animals). Zonimo was born.
 
