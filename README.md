@@ -35,3 +35,9 @@ It was built entirely from PHP and a little CSS, HTML, and JavaScript using Code
 ### Here is a look at a user dashboard
 
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo7.PNG)
+
+***
+# Bonus
+### here are some of my sample codes
+
+![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo400.PNG)
