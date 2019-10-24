@@ -1,5 +1,5 @@
 Welcome to the Zonimo project! (check the "Animal Database" Repository for updates)
-
+***
 # Overview
 Zonimo was a project which I started working on in late 2015 and I build it entirely.
 By the time I started working with the database, I had over 20,000 unique animal names.
