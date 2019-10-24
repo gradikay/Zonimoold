@@ -1,24 +1,24 @@
 <?php 
 // WHEN YOU GET THE NONE OBJECT PROBLEM USE RESULT() RATHER THAN ROW()
 //class Factopedia_model extends CI_Model{
-    class Afrosoricidas_model extends CI_Model{
+    class Cavys_model extends CI_Model{
      
-     // Return all the row in the dogs' table
+     // Return all the row in the cavys' table
      // This will be use for pagination for the "total_rows"
      public function record_count(){
-         return $this->db->count_all('afrosoricidas'); 
+         return $this->db->count_all('cavys');
      }
     
-     // This retrieves the list of all the recods from the dogs' table
-     public function fetch_afrosoricidas($limit, $start) {
+     // This retrieves the list of all the recods from the cavys' table
+     public function fetch_cavys($limit, $start) {
         $this->db->limit($limit, $start);
         $this->db->select('*') ;
-        $this->db->from('afrosoricidas AS D') ;
+        $this->db->from('cavys AS D') ;
         $this->db->order_by("name", "asc");
-        $this->db->join('afrosoricidas_first_image  AS F', 'D.name = F.animal_name','left') ;
-        $this->db->join('afrosoricidas_second_image AS S', 'D.name = S.animal_name','left') ;
-        $this->db->join('afrosoricidas_third_image  AS T', 'D.name = T.animal_name','left') ;
-        $this->db->join('afrosoricidas_fourth_image AS R', 'D.name = R.animal_name','left') ;
+        $this->db->join('cavys_first_image  AS F', 'D.name = F.animal_name','left') ;
+        $this->db->join('cavys_second_image AS S', 'D.name = S.animal_name','left') ;
+        $this->db->join('cavys_third_image  AS T', 'D.name = T.animal_name','left') ;
+        $this->db->join('cavys_fourth_image AS R', 'D.name = R.animal_name','left') ;
         $query = $this->db->get();
  
         if ($query->num_rows() > 0) {
@@ -32,30 +32,30 @@
     
     public function get_my_images($id){
         $this->db->select('*') ;
-        $this->db->from('afrosoricidas AS D') ;
-        $this->db->join('afrosoricidas_first_image  AS F', 'D.name = F.animal_name','left') ;
-        $this->db->join('afrosoricidas_second_image AS S', 'D.name = S.animal_name','left') ;
-        $this->db->join('afrosoricidas_third_image  AS T', 'D.name = T.animal_name','left') ;
-        $this->db->join('afrosoricidas_fourth_image AS R', 'D.name = R.animal_name','left') ;
+        $this->db->from('cavys AS D') ;
+        $this->db->join('cavys_first_image  AS F', 'D.name = F.animal_name','left') ;
+        $this->db->join('cavys_second_image AS S', 'D.name = S.animal_name','left') ;
+        $this->db->join('cavys_third_image  AS T', 'D.name = T.animal_name','left') ;
+        $this->db->join('cavys_fourth_image AS R', 'D.name = R.animal_name','left') ;
         $this->db->where('D.id', $id);
         $query = $this->db->get();
         return $query->row();
     }
 /*
- ********************* Dogs' table settings
+ ********************* Cavys' table settings
  */
-    public function get_afrosoricida_details($id){
+    public function get_cavy_details($id){
         $this->db->select('*');
-        $this->db->from('afrosoricidas');
+        $this->db->from('cavys');
         $this->db->where('id', $id);
         $query = $this->db->get();
         return $query->row();
     }
     
-    public function get_afrosoricida_databases(){
+    public function get_cavy_databases(){
         $this->db->select('*');
         $this->db->from('section AS S');
-        $this->db->join('afrosoricidas AS D', 'S.section_id = D.section_id', 'INNER');
+        $this->db->join('cavys AS D', 'S.section_id = D.section_id', 'INNER');
         $this->db->join('sub_species AS B', 'B.id = D.sub_specie_id', 'INNER');
         $this->db->join('specie AS C', 'C.specie_id = D.specie_id', 'INNER');
         $query = $this->db->get();
@@ -66,10 +66,10 @@
     }
     
     
-//Update the animal data selected here we have the dogs' table
+//Update the animal data selected here we have the cavys' table
     
      public function update($id){
-          // This is the setting for the editing part of dogs' page
+          // This is the setting for the editing part of cavys' page
           // OLD CODE
         /* $data = array(
             'other_name'  => $this->input->post('other_name'),
@@ -77,7 +77,7 @@
             'weight_2'    => $this->input->post('weight_2'),
             'height_1'    => $this->input->post('height_1'),
             'height_2'    => $this->input->post('height_2'),
-            'dog_function'=> $this->input->post('dog_function'),
+            'coat'        => $this->input->post('coat'),
             'color'       => $this->input->post('color'),
             'location'    => $this->input->post('location'),
             'offsprings'  => $this->input->post('offspring'),
@@ -85,50 +85,41 @@
             'description' => $this->input->post('description'),
             'source'      => $this->input->post('links')
         ); */
-            $id           = $this->input->post('congo');
-            $scientific_name = $this->input->post('VCPKiFHUvI');
-            $weight_1     = $this->input->post('clXhXvHgnp');
-            $weight_2     = $this->input->post('jFNaKUfhuf');
-            $height_1     = $this->input->post('mdATzSMbgl');
-            $height_2     = $this->input->post('BHYHAeZAzg');
-            $status       = $this->input->post('CSwyfmDBpu');
-            $sound        = $this->input->post('nkTdZQcYAo');
-            $kingdom      = $this->input->post('SdWKxdEFSr');
-            $classe       = $this->input->post('LwXEqlRRBd');
-            $order        = $this->input->post('DoUoxQfTkL');
-            $suborder     = $this->input->post('COmnyQOkSy');
-            $family       = $this->input->post('yaZoFKzEio');
-            $location     = $this->input->post('ymbsQHByXL');
-            $offsprings   = $this->input->post('INfTBpFboM');
-            $life_span    = $this->input->post('UJrieElOhU');
+            $id           = $this->input->post('congo'); 
+            $other_name   = $this->input->post('VCPKiFHUvI'); 
+            $weight_1     = $this->input->post('LwXEqlRRBd');
+            $weight_2     = $this->input->post('DoUoxQfTkL');
+            $height_1     = $this->input->post('COmnyQOkSy');
+            $height_2     = $this->input->post('yaZoFKzEio');
+            $coat         = $this->input->post('nkTdZQcYAo');
+            $color        = $this->input->post('CSwyfmDBpu');
+            $location     = $this->input->post('clXhXvHgnp');
+            $offsprings   = $this->input->post('jFNaKUfhuf');
+            $life_span    = $this->input->post('mdATzSMbgl');
+            $description  = $this->input->post('description');
+            $source       = $this->input->post('links');
         
         //We are escaping from space and quotes
         // We are assigning the table row to some value
-            $sql = "UPDATE afrosoricidas            
-                    SET scientific_name   = " . $this->db->escape($scientific_name) . ",
+            $sql = "UPDATE cavys            
+                    SET other_name   = " . $this->db->escape($other_name) . ",
                         weight_1     = " . $this->db->escape($weight_1) . ",
                         weight_2     = " . $this->db->escape($weight_2) . ",
                         height_1     = " . $this->db->escape($height_1) . ",
                         height_2     = " . $this->db->escape($height_2) . ",
-                        status       = " . $this->db->escape($status) . ",
-                        sound        = " . $this->db->escape($sound) . ",
-                        status       = " . $this->db->escape($status) . ",
-                        kingdom      = " . $this->db->escape($kingdom) . ",            
-                        classe       = " . $this->db->escape($classe) . ",              
-                        order_m      = " . $this->db->escape($order) . ",               
-                        suborder_m   = " . $this->db->escape($suborder) . ",          
-                        family       = " . $this->db->escape($family) . ",             
-                        location     = " . $this->db->escape($location) . ",             
-                        offsprings   = " . $this->db->escape($offsprings) . ",            
-                        life_span    = " . $this->db->escape($life_span) . ",            
-                        description  = " . $this->db->escape($description) . ",          
+                        coat         = " . $this->db->escape($coat) . ",
+                        color        = " . $this->db->escape($color) . ",                    
+                        location     = " . $this->db->escape($location) . ",                    
+                        offsprings   = " . $this->db->escape($offsprings) . ",                    
+                        life_span    = " . $this->db->escape($life_span) . ",                    
+                        description  = " . $this->db->escape($description) . ",                    
                         source       = " . $this->db->escape($source) . "
                      WHERE id        = " . $id . " ";             
         // Return the result of this query
             $result = $this->db->query($sql);         
     }
     
-    public function afrosoricidas_do_upload(){
+    public function cavys_do_upload(){
         $username = $this->session->userdata('username');
         // You can call any of this items using the cariable 
             // $upload_data
@@ -157,7 +148,7 @@
             );
             $insert = $this->db->insert('animal_image', $data);
         */
-            $image_title     = $this->input->post('pwSTtJDdkm');
+             $image_title     = $this->input->post('pwSTtJDdkm');
             $image_number    = $this->input->post('JSjOgkgBQL');
             $animal_name     = $this->input->post('MqeoMLLNyX');
             $section_name    = $this->input->post('DGAJGPQohm');
@@ -204,9 +195,9 @@
         // Return the result of this query
             $result = $this->db->query($sql);
     }
-        
-    public function afrosoricidas_do_upload_first(){
+    public function cavys_do_upload_first(){
         $username = $this->session->userdata('username');
+        
         // You can call any of this items using the cariable 
             // $upload_data
 			$data = array('upload_data' => $this->upload->data());
@@ -226,7 +217,7 @@
             $image_size      = $data['upload_data']['file_size'];
         //We are escaping from space and quotes
         // We are assigning the table row to some value
-            $sql = "UPDATE afrosoricidas_first_image            
+            $sql = "UPDATE cavys_first_image            
                     SET image_title1    = " . $this->db->escape($image_title) . ",
                         username1       = " . $this->db->escape($username) . ",
                         animal_name     = " . $this->db->escape($animal_name) . ",
@@ -246,8 +237,7 @@
         // Return the result of this query
             $result = $this->db->query($sql);
     }
-        
-    public function afrosoricidas_do_upload_second(){
+    public function cavys_do_upload_second(){
         $username = $this->session->userdata('username');
         // You can call any of this items using the cariable 
             // $upload_data
@@ -269,7 +259,7 @@
         
         //We are escaping from space and quotes
         // We are assigning the table row to some value
-            $sql = "UPDATE afrosoricidas_second_image            
+            $sql = "UPDATE cavys_second_image            
                     SET image_title2    = " . $this->db->escape($image_title) . ",
                         username2       = " . $this->db->escape($username) . ",
                         animal_name     = " . $this->db->escape($animal_name) . ",
@@ -289,8 +279,7 @@
         // Return the result of this query
             $result = $this->db->query($sql);
     }
-        
-    public function afrosoricidas_do_upload_third(){
+    public function cavys_do_upload_third(){
         $username = $this->session->userdata('username');
         // You can call any of this items using the cariable 
             // $upload_data
@@ -312,7 +301,7 @@
         
         //We are escaping from space and quotes
         // We are assigning the table row to some value
-            $sql = "UPDATE afrosoricidas_third_image            
+            $sql = "UPDATE cavys_third_image            
                     SET image_title3    = " . $this->db->escape($image_title) . ",
                         username3       = " . $this->db->escape($username) . ",
                         animal_name     = " . $this->db->escape($animal_name) . ",
@@ -332,8 +321,7 @@
         // Return the result of this query
             $result = $this->db->query($sql);
     }
-        
-    public function afrosoricidas_do_upload_fourth(){
+    public function cavys_do_upload_fourth(){
         $username = $this->session->userdata('username');
         // You can call any of this items using the cariable 
             // $upload_data
@@ -355,7 +343,7 @@
         
         //We are escaping from space and quotes
         // We are assigning the table row to some value
-            $sql = "UPDATE afrosoricidas_fourth_image            
+            $sql = "UPDATE cavys_fourth_image            
                     SET image_title4    = " . $this->db->escape($image_title) . ",
                         username4       = " . $this->db->escape($username) . ",
                         animal_name     = " . $this->db->escape($animal_name) . ",
@@ -377,9 +365,9 @@
     }
     
     //Get all users table
-    public function get_users(){
+    public function get_users(){ 
         
-        $this->db->select('*'); 
+        $this->db->select('*');
         $this->db->from('users_maxy99zx99');
         
         $query = $this->db->get();
@@ -389,7 +377,7 @@
         
      //Get all the row count
     public function return_row_count(){
-        $this->db->from('afrosoricidas');
+        $this->db->from('cavys');
         $query = $this->db->get();
         $rowcount = $query->num_rows();
         return $rowcount;
