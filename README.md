@@ -10,20 +10,27 @@ It was first called AnimalGenuis.com, and later became Zonimo.
 It was built entirely from PHP and a little CSS, HTML, and JavaScript using CodeIgniter.
 
 ### Here you can see what the Signup page looked like
+
 ![Login to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo1.PNG)
 
 ### Here you can see a screenshot of the selling page | with built-in feedback and cart (far top right corner)
+
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo2.PNG) 
 
 ### Here is another screenshot of the selling page
+
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo3.PNG)
 
 ## Now, the main page. This is main project of the platform
+
 ### This is the screenshot for the main page for factopedia which held all the facts about animals
+
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo4.PNG)
 
 ### Here is another screenshot for factopedia
+
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo5.PNG)
 
 ### Here is a look at a user dashboard
+
 ![Buy&Sell to Zonimo image](https://github.com/gradikay/Zonimoold/blob/master/zonimo7.PNG)
